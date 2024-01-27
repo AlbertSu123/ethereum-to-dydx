@@ -45,6 +45,12 @@ const provider = new AlchemyProvider({
     })
 );
 
+/**
+ * Generate a user operation
+ * @param params  - The params to send to Squid Router
+ * @param publicKey - The public key to convert.
+ * @returns The user operation
+ */
 export const generateUserOp = async (
   params: SquidParams,
   publicKey: string
