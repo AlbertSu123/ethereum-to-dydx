@@ -24,8 +24,7 @@
   },
   "contributors": [],
   "scripts": {
-    "dev": "",
-    "test": ""
+    "test": "npx ts-node src/userOperation.ts"
   },
   "devDependencies": {
     "@types/node": "^20.11.7",
