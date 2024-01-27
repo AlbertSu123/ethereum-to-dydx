@@ -28,12 +28,19 @@
     "test": ""
   },
   "devDependencies": {
+    "@types/node": "^20.11.7",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@alchemy/aa-accounts": "^2.4.0",
     "@alchemy/aa-alchemy": "^2.4.0",
     "@alchemy/aa-core": "^2.3.1",
+    "@cosmjs/crypto": "^0.32.2",
+    "@cosmjs/encoding": "^0.32.2",
+    "@iov/bcp": "^2.5.0",
+    "@iov/crypto": "^2.5.0",
+    "@iov/encoding": "^2.5.0",
+    "dotenv": "^16.4.1",
     "viem": "1"
   }
 }

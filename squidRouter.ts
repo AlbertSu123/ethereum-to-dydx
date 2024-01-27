@@ -2,14 +2,17 @@ import axios from "axios";
 import { Keccak256, Secp256k1 } from "@cosmjs/crypto";
 import { fromHex, toHex } from "@cosmjs/encoding";
 import { toChecksummedAddress } from "./crypto";
+import { SquidParams } from "./types";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const getRoute = async (params) => {
   const result = await axios.get(
-    "https://testnet.api.squidrouter.com/v1/route",
+    process.env.SQUID_API_URL!,
     {
       params: params,
       headers: {
-        "x-integrator-id": "your-integrator-id",
+        "x-integrator-id": process.env.SQUID_INTEGRATOR_ID,
       },
     }
   );

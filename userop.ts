@@ -11,6 +11,9 @@ import {
 } from "@alchemy/aa-core";
 import { sepolia } from "viem/chains";
 import { getAddress } from "viem";
+import { SquidParams } from "./types";
+import dotenv from "dotenv";
+dotenv.config();
 
 const params = {
   fromChain: 5, // Goerli
@@ -24,25 +27,13 @@ const params = {
   enableForecall: true, // optional, defaults to true
 };
 
-type SquidParams = {
-  fromChain: number;
-  fromToken: string;
-  fromAmount: string;
-  toChain: number;
-  toToken: string;
-  fromAddress: string;
-  toAddress: string;
-  slippage: number;
-  enableForecall?: boolean;
-};
-
 const chain = sepolia;
-const PRIVATE_KEY = "0xliterallycanbeanyprivatekey" as Hex;
+// Note: this private key can be anything, we just need it because alchemy wants an account for their sdk
+const PRIVATE_KEY = process.env.PRIVATE_KEY as Hex;
 const owner = LocalAccountSigner.privateKeyToAccountSigner(PRIVATE_KEY);
 
 const provider = new AlchemyProvider({
-  // get your Alchemy API key at https://dashboard.alchemy.com
-  apiKey: "ALCHEMY_API_KEY",
+  apiKey: process.env.ALCHEMY_API_KEY!,
   chain,
 }).connect(
   (rpcClient) =>
@@ -67,3 +58,5 @@ export const generateUserOp = async (
   });
   return userOperationStruct;
 };
+
+generateUserOp(params, "0x...");
