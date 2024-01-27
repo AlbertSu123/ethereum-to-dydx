@@ -2,7 +2,7 @@ import axios from "axios";
 import { Keccak256, Secp256k1 } from "@cosmjs/crypto";
 import { fromHex, toHex } from "@cosmjs/encoding";
 import { toChecksummedAddress } from "./crypto";
-import { SquidParams } from "./types";
+import { SquidParams } from "../types";
 import dotenv from "dotenv";
 dotenv.config();
 

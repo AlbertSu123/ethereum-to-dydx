@@ -11,7 +11,7 @@ import {
 } from "@alchemy/aa-core";
 import { sepolia } from "viem/chains";
 import { getAddress } from "viem";
-import { SquidParams } from "./types";
+import { SquidParams } from "../types";
 import dotenv from "dotenv";
 dotenv.config();
 
